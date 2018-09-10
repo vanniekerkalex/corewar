@@ -6,7 +6,7 @@
 /*   By: avan-ni <avan-ni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 16:20:22 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/09/06 23:39:32 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/09/07 19:37:27 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ char *ft_store_player()
     char *line;
     char *tmp;
 
-    str = NULL;
-    tmp = NULL;
+    str = ft_strnew(0);
     while (get_next_line(0, &line))
     {
         if (!ft_strcmp(line, ""))
@@ -65,13 +64,22 @@ char *ft_store_player()
 char    *ft_convert_cor_data(char *str)
 {
     char *tmp;
+    char *tmp2;
+    char *hex;
+    unsigned char c;
     int i;
 
-    tmp = NULL;
     i = 0;
     while (*(str + i))
     {
-
+        c = str[i++];
+        tmp = ft_itoa_base(c, 16);
+        tmp2 = ft_strjoin(tmp, "-");
+        free(tmp);
+        tmp = ft_strjoin(hex, tmp2);
+        free(tmp2);
+        hex = ft_strdup(tmp);
+        free(tmp);
     }
-    return (0);
+    return (hex);
 }

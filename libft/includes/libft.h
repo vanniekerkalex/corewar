@@ -6,7 +6,7 @@
 /*   By: avan-ni <avan-ni@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 13:43:14 by avan-ni           #+#    #+#             */
-/*   Updated: 2018/09/06 18:12:01 by avan-ni          ###   ########.fr       */
+/*   Updated: 2018/09/07 16:30:03 by avan-ni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strjoin(char const *s1, char const *s2);
 
 char				*ft_itoa(int n);
+char 				*ft_itoa_base(int value, int base);
 void				ft_strclr(char *s);
 void				ft_putnbr(int n);
 void				ft_putendl(char const *s);
